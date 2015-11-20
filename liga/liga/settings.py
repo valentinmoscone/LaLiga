@@ -51,6 +51,20 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+SOCIAL_AUTH_GOOGLE_PLUS_IGNORE_DEFAULT_SCOPE = True
+SOCIAL_AUTH_GOOGLE_PLUS_SCOPE = [
+    'https://www.googleapis.com/auth/plus.login',
+    'https://www.googleapis.com/auth/userinfo.email',
+    'https://www.googleapis.com/auth/userinfo.profile',
+]
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.google.GooglePlusAuth',
+)
+
+SOCIAL_AUTH_GOOGLE_PLUS_KEY = '363592047918-flrra9ugbthv46nbtim2o42u3fu5mktb.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_PLUS_SECRET = 'W3Nazom0g7j-e88o8Y08_ZFZ'
+
 ROOT_URLCONF = 'liga.urls'
 
 TEMPLATES = [
