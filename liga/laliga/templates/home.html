@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>LogIn</title>
+        <script src = "https://plus.google.com/js/client:platform.js" async defer></script>
+                <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static "css/home.css" %}">
+	</head>
+<body class="background">
+    <div class="lineheader">
+    </div>
+    <div class="menu">
+        <table class="options">
+            <tr>
+                <td><a class="menuitem">HOME</a></td>
+                <td><a class="menuitem">ABOUT</a></td>
+                <td><a class="menuitem">CONTACT</a></td>
+                <td><a class="menuitem">LOGOUT</a></td>
+            </tr>
+        </table> 
+    </div>
+    <div id="response" class="show">
+        <p class="p">La Liga</p>
+        {{teams.length}}
+        <table class="imgtable">
+            <tr>
+                <td class="tableitem"><a href= "/home/{{teams.0.name}}/" ><img class="imaget" src= {{teams.0.imageUrl}} /></a></td>
+                <td class="tableitem"><a href="http://localhost:8080/home/{{teams.1.name}}"><img class="imaget" src= {{teams.1.imageUrl}} /></a></td>
+                <td class="tableitem"><img class="imaget" src= {{teams.2.imageUrl}} /></td>
+            </tr>
+            <tr>
+                <td class="tableitem"><img class="imaget" src= {{teams.3.imageUrl}} /></td>
+                <td class="tableitem"><img class="imaget" src= {{teams.4.imageUrl}} /></td>
+                <td class="tableitem"><img class="imaget" src= {{teams.5.imageUrl}} /></td>
+            </tr>
+            <tr>
+                <td class="tableitem"><img class="imaget" src= {{teams.6.imageUrl}} /></td>
+                <td class="tableitem"><img class="imaget" src= {{teams.7.imageUrl}} /></td>
+                <td class="tableitem"><img class="imaget" src= {{teams.8.imageUrl}} /></td>
+            </tr>
+        </table> 
+        
+    </div>
+ </body>
