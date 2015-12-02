@@ -83,7 +83,7 @@ color: whitesmoke;
 }
 
 .tableplayers{
-    margin-top: -50%;
+    transform: translate(0%,-150%);
     margin-left: 50%;
 }
 
