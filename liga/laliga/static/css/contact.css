@@ -1,0 +1,28 @@
+.comment{
+    font-size: 20px;
+    color:whitesmoke;
+    position: absolute;
+    transform: translate(-50%,-25%);
+    left: 50%;
+    top: 25%;
+}
+
+.email{
+    height: 200px;
+    width: 400px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+
+.sendButton {
+    width: 320px;
+    color: whitesmoke;
+    background-color: #EE6263;
+    border-color: #EE6263;
+    position: absolute;
+    transform: translate(-50%,-75%);
+    left: 50%;
+    top: 75%;
+}

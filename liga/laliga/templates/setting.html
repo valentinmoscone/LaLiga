@@ -8,6 +8,7 @@
                 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static "css/home.css" %}">
+        <link rel="stylesheet" href="{% static "css/setting.css" %}">
 	</head>
 <body class="background">
     <div class="lineheader">
@@ -29,24 +30,21 @@
         </table> 
     </div>
     <div id="response" class="show">
-        <p class="p">La Liga</p>
-        <table class="imgtable">
+      <table class="imgtable">
             <tr>
-                <td class="tableitem"><a href= "/home/{{teams.0.name}}/" ><img class="imaget" src= {{teams.0.imageUrl}} /></a></td>
-                <td class="tableitem"><a href="/home/{{teams.1.name}}/"><img class="imaget" src= {{teams.1.imageUrl}} /></a></td>
-                <td class="tableitem"><a href="/home/{{teams.2.name}}/"><img class="imaget" src= {{teams.2.imageUrl}} /></a></td>
-            </tr>
-            <tr>
-                <td class="tableitem"><a href= "/home/{{teams.3.name}}/" ><img class="imaget" src= {{teams.3.imageUrl}} /></a></td>
-                <td class="tableitem"><a href="/home/{{teams.4.name}}/"><img class="imaget" src= {{teams.4.imageUrl}} /></a></td>
-                <td class="tableitem"><a href="/home/{{teams.5.name}}/"><img class="imaget" src= {{teams.5.imageUrl}} /></a></td>
-            </tr>
-            <tr>
-                <td class="tableitem"><a href="/home/{{teams.6.name}}/"><img class="imaget" src= {{teams.6.imageUrl}} /></a></td>
-                <td class="tableitem"><a href="/home/{{teams.7.name}}/"><img class="imaget" src= {{teams.7.imageUrl}} /></a></td>
-                <td class="tableitem"><a href="/home/{{teams.8.name}}/"><img class="imaget" src= {{teams.8.imageUrl}} /></a></td>
+                <td><button class="sendButton" onclick="deleteAcc();">Delete Account</button></td>
             </tr>
         </table> 
-        
     </div>
  </body>
+<script>
+    function deleteAcc() {
+        
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", "/setting/");
+
+    document.body.appendChild(form);
+    form.submit();
+}
+</script>

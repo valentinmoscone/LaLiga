@@ -1,0 +1,10 @@
+.sendButton {
+    width: 150px;
+    height: 100px;
+    color: whitesmoke;
+    text-align: center;
+    background-color: #EE6263;
+    border-color: #EE6263;
+    margin-top: 50px;
+    margin-left: 45%;
+}

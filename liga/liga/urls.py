@@ -20,6 +20,11 @@ urlpatterns = patterns('',
     url(r'^$','laliga.views.login', name='login'),
     url(r'^home/$','laliga.views.home', name='home'),
     url(r'^home/(?P<team_name>\w+)/$', 'laliga.views.team'),
+    url(r'^testdata/$','laliga.views.testdata'),
+    url(r'^logout/$','laliga.views.user_logout'),
+    url(r'^contact/$','laliga.views.contact'),
+    url(r'^profile/$', 'laliga.views.profile'),
+    url(r'^setting/$', 'laliga.views.setting'),
 
     url(r'^admin/', include(admin.site.urls))
 )

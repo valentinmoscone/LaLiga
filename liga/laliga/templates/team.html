@@ -5,15 +5,100 @@
         <script src = "https://plus.google.com/js/client:platform.js" async defer></script>
                 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static "css/home.css" %}">
+        <link rel="stylesheet" href="{% static "css/team.css" %}">
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng({{teamdetail.lat}}, {{teamdetail.lon}}),
+          zoom: 13,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+        
+          var marker = new google.maps.Marker({
+    position: new google.maps.LatLng({{teamdetail.lat}}, {{teamdetail.lon}}),
+    map: map,
+    title: 'Estadio'
+  });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    
+    </script>
 	</head>
 <body class="background">
     <div class="lineheader">
     </div>
     <div class="menu">
+        <table class="options">
+            <tr>
+                <p class="headtext">Hello, {{user.username}}</p>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td><a href="/home/" class="menuitem">HOME</a></td>
+                <td><a href="/profile/" class="menuitem">PROFILE</a></td>
+                <td><a href="/contact/" class="menuitem">CONTACT</a></td>
+                <td><a href="/setting/" class="menuitem">SETTINGS</a></td>
+                <td><a href="/logout/" class="menuitem">SIGN OUT</a></td>
+            </tr>
+        </table> 
     </div>
-        <div id="response" class="show">
 
-    <p class="p">La liga {{teamdetail.name}}</p>
-    </div>
+     <table class="tableTeam">
+            <tr>
+                <td class="tableitem"><img class="imaget" src= {{teamdetail.imageUrl}} /></td>
+
+            </tr>
+            <tr>
+                <td class="tableitem"><p class="tableFont">{{teamdetail.name}}</p> </td>
+
+            </tr>
+         <tr>
+             <td class="tableitem"><table style="width:100%"> 
+                 <tr>
+                     <td> <p class="tableFontStatics">Puntaje</p>
+                     </td>
+                     <td><p class="tableFontStatics">{{teamdetail.points}}</p>
+                     </td>
+                 </tr> 
+                 <tr>
+                     <td><p class="tableFontStatics">Goles en Contra</p>
+                     </td>
+                     <td><p class="tableFontStatics">{{teamdetail.goalsScored}}</p>
+                     </td>
+                 </tr> 
+                 <tr>
+                     <td><p class="tableFontStatics">Goles a Favor</p>
+                     </td>
+                     <td><p class="tableFontStatics">{{teamdetail.goalsAgainst}}</p>
+                     </td>
+                 </tr> 
+                 </table>
+             </td>
+
+            </tr>
+            <tr>
+                <td class="tableitem"><div id="map" class="map"></div></td>
+
+            </tr>
+            
+        </table> 
+    
+    <table id="tableplayers" class="tableplayers">
+                <tr>
+            <td style="width: 150px; height:70px;"><u class="tableFontTitle">Nombre</u></td>
+            <td class="tableTitlePlayer" style="width: 150px; height:70px;"><u class="tableFontTitle">Camiseta</u></td>
+            <td class="tableTitlePlayer" style="width: 150px; height:70px;"><u class="tableFontTitle">Posición</u></td>
+        </tr>
+        {% for player in playerdetail %}
+        <tr>
+            <td style="width: 150px;"><p class="tableFontStatics">{{player.name}}</p></td>
+            <td class="cellcentered" style="width: 150px;"><p class="tableFontStatics">{{player.number}}</p></td>
+            <td class="cellcentered" style="width: 150px;"><p class="tableFontStatics">{{player.position}}</p></td>
+        </tr>
+        {% endfor %}
+    </table>
  </body>

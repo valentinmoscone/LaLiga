@@ -4,12 +4,18 @@
 
 .p {
     font-size: 40px;
-    font-family: 'Roboto';
     color:whitesmoke;
     position: absolute;
     transform: translate(-50%,-15%);
     left: 50%;
     top: 15%;
+}
+
+.headtext{
+    font-size: 20px;
+    color:whitesmoke;
+    margin-left: 100px;
+    transform: translate(5%,40%);
 }
 
 .menu {
@@ -27,7 +33,7 @@
 
 .options {
     margin-left: 60%;
-    transform: translate(-20%,80%);
+    transform: translate(0%,-120%);
 }
 
 .menuitem {
